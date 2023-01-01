@@ -1,2 +1,2 @@
-# Logging
-Wrapper for logging
+# Logger
+Wrapper for log 
