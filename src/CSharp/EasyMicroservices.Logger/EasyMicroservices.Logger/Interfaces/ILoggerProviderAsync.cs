@@ -1,56 +1,53 @@
 ﻿using EasyMicroservices.ServiceContracts;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace EasyMicroservices.Logger.Interfaces
 {
     /// <summary>
-    /// 
+    /// General logger define here
     /// </summary>
-    public interface ILoggerSyncProvider
+    public interface ILoggerProviderAsync
     {
         /// <summary>
         ///  Verbose level log
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        MessageContract Verbose(params object[] args);
+        public Task<MessageContract> VerboseAsync(params object[] args);
 
         /// <summary>
         /// Debug level log
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        MessageContract Debug(params object[] args);
+        public Task<MessageContract> DebugAsync(params object[] args);
 
         /// <summary>
         /// Information level log
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        MessageContract Information(params object[] args);
+        public Task<MessageContract> InformationAsync(params object[] args);
 
         /// <summary>
         /// Warning level log
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        MessageContract Warning(params object[] args);
+        public Task<MessageContract> WarningAsync(params object[] args);
 
         /// <summary>
         /// Error level log
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        MessageContract Error(params object[] args);
+        public Task<MessageContract> ErrorAsync(params object[] args);
 
         /// <summary>
         /// Fatal level log
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        MessageContract Fatal(params object[] args);
+        public Task<MessageContract> FatalAsync(params object[] args);
     }
 }

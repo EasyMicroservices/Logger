@@ -10,7 +10,7 @@ namespace EasyMicroservices.Logger.Providers
     /// <summary>
     /// 
     /// </summary>
-    public abstract class BaseProvider : ILoggerProvider
+    public abstract class BaseProvider : ILoggerProviderAsync, ILoggerProvider
     {
         internal ExtractedLogInfo Extract(params object[] args)
         {
@@ -34,30 +34,20 @@ namespace EasyMicroservices.Logger.Providers
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public abstract Task<MessageContract> Debug(params object[] args);
+        public virtual Task<MessageContract> DebugAsync(params object[] args)
+        {
+            return Task.FromResult(Debug(args));
+        }
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public abstract Task<MessageContract> Error(params object[] args);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="args"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public abstract Task<MessageContract> Fatal(params object[] args);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="args"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public abstract Task<MessageContract> Information(params object[] args);
+        public virtual Task<MessageContract> ErrorAsync(params object[] args)
+        {
+            return Task.FromResult(Error(args));
+        }
 
         /// <summary>
         /// 
@@ -65,7 +55,10 @@ namespace EasyMicroservices.Logger.Providers
         /// <param name="args"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public abstract Task<MessageContract> Verbose(params object[] args);
+        public virtual Task<MessageContract> FatalAsync(params object[] args)
+        {
+            return Task.FromResult(Fatal(args));
+        }
 
         /// <summary>
         /// 
@@ -73,6 +66,73 @@ namespace EasyMicroservices.Logger.Providers
         /// <param name="args"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public abstract Task<MessageContract> Warning(params object[] args);
+        public virtual Task<MessageContract> InformationAsync(params object[] args)
+        {
+            return Task.FromResult(Information(args));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public virtual Task<MessageContract> VerboseAsync(params object[] args)
+        {
+            return Task.FromResult(Verbose(args));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public virtual Task<MessageContract> WarningAsync(params object[] args)
+        {
+            return Task.FromResult(Warning(args));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public abstract MessageContract Verbose(params object[] args);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public abstract MessageContract Debug(params object[] args);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public abstract MessageContract Information(params object[] args);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public abstract MessageContract Warning(params object[] args);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public abstract MessageContract Error(params object[] args);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public abstract MessageContract Fatal(params object[] args);
     }
 }
