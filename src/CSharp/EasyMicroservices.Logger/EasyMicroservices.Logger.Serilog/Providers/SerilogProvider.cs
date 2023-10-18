@@ -22,7 +22,7 @@ namespace EasyMicroservices.Logger.Serilog.Providers
             _logger = loggerConfiguration.CreateLogger();
         }
 
-        Task<MessageContract> Log(object[] args, Action<Exception, string, object[]> action1, Action<string, object[]> action2)
+        MessageContract Log(object[] args, Action<Exception, string, object[]> action1, Action<string, object[]> action2)
         {
             var extracted = Extract(args);
             AddNotExistItems(extracted);
@@ -30,7 +30,7 @@ namespace EasyMicroservices.Logger.Serilog.Providers
                 action1(extracted.Exceptions.First(), extracted.Messages.First(), extracted.Objects);
             else
                 action2(extracted.Messages.First(), extracted.Objects);
-            return Task.FromResult((MessageContract)true);
+            return (MessageContract)true;
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace EasyMicroservices.Logger.Serilog.Providers
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public override Task<MessageContract> Verbose(params object[] args)
+        public override MessageContract Verbose(params object[] args)
         {
             return Log(args, _logger.Verbose, _logger.Verbose);
         }
@@ -48,7 +48,8 @@ namespace EasyMicroservices.Logger.Serilog.Providers
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public override Task<MessageContract> Debug(params object[] args)
+        /// <exception cref="NotImplementedException"></exception>
+        public override MessageContract Debug(params object[] args)
         {
             return Log(args, _logger.Debug, _logger.Debug);
         }
@@ -58,7 +59,8 @@ namespace EasyMicroservices.Logger.Serilog.Providers
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public override Task<MessageContract> Information(params object[] args)
+        /// <exception cref="NotImplementedException"></exception>
+        public override MessageContract Information(params object[] args)
         {
             return Log(args, _logger.Information, _logger.Information);
         }
@@ -68,7 +70,8 @@ namespace EasyMicroservices.Logger.Serilog.Providers
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public override Task<MessageContract> Warning(params object[] args)
+        /// <exception cref="NotImplementedException"></exception>
+        public override MessageContract Warning(params object[] args)
         {
             return Log(args, _logger.Warning, _logger.Warning);
         }
@@ -78,7 +81,7 @@ namespace EasyMicroservices.Logger.Serilog.Providers
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public override Task<MessageContract> Error(params object[] args)
+        public override MessageContract Error(params object[] args)
         {
             return Log(args, _logger.Error, _logger.Error);
         }
@@ -88,7 +91,7 @@ namespace EasyMicroservices.Logger.Serilog.Providers
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public override Task<MessageContract> Fatal(params object[] args)
+        public override MessageContract Fatal(params object[] args)
         {
             return Log(args, _logger.Fatal, _logger.Fatal);
         }
