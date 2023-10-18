@@ -1,0 +1,29 @@
+name: MacOS (dotnet build and test)
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  os-tests:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version:  |
+            6.0.x
+            7.0.x
+        env:
+            NUGET_CERT_REVOCATION_MODE: offline
+      - name: Restore dependencies
+        run: dotnet restore ./src/CSharp/EasyMicroservices.Logger.sln
+      - name: Build
+        run: dotnet build ./src/CSharp/EasyMicroservices.Logger.sln --no-restore
+      - name: Test
+        run:  |
+          dotnet test ./src/CSharp/EasyMicroservices.Logger.sln --no-build --verbosity normal -f net6.0
+          dotnet test ./src/CSharp/EasyMicroservices.Logger.sln --no-build --verbosity normal -f net7.0
