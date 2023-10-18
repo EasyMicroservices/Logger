@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("EasyMicroservices.Logger.Serilog")]
 [assembly: InternalsVisibleTo("EasyMicroservices.Logger.Log4net")]
+[assembly: InternalsVisibleTo("EasyMicroservices.Logger.NLog")]
 
 namespace EasyMicroservices.Logger.Models
 {
