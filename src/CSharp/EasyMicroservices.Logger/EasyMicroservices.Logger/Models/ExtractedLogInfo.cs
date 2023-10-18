@@ -3,6 +3,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("EasyMicroservices.Logger.Serilog")]
+[assembly: InternalsVisibleTo("EasyMicroservices.Logger.Log4net")]
 
 namespace EasyMicroservices.Logger.Models
 {
