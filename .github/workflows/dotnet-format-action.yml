@@ -21,11 +21,22 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           action: "fix"
-          workspace: "./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln"
+          workspace: "./src/CSharp/EasyMicroservices.Logger.sln"
       - name: Test
-        run:  |
-          dotnet test ./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln -f net6.0
-          dotnet test ./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln -f net7.0
+        run: dotnet test ./src/CSharp/EasyMicroservices.Logger.sln
+      - name:  Test to generate Code Coverage Report
+        working-directory: ./src/CSharp
+        run: |
+          dotnet build ./EasyMicroservices.Logger.sln
+          dotnet tool install --global coverlet.console
+          coverlet EasyMicroservices.Logger.Tests/bin/Debug/net6.0/EasyMicroservices.Logger.Tests.dll --target "dotnet" --targetargs "test EasyMicroservices.Logger.Tests/bin/Debug/net6.0/EasyMicroservices.Logger.Tests.dll --no-build" -f opencover
+      - name: OpenCover Badge Generator
+        uses: danpetitt/open-cover-badge-generator-action@v1.0.9
+        with:
+          path-to-opencover-xml: ./src/CSharp/coverage.opencover.xml
+          path-to-badges: ./src/CSharp
+          minimum-coverage: 50
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit files
         if: steps.format.outputs.has-changes == 'true'
         uses: EndBug/add-and-commit@v4.1.0
