@@ -20,10 +20,10 @@ jobs:
         env:
             NUGET_CERT_REVOCATION_MODE: offline
       - name: Restore dependencies
-        run: dotnet restore ./src/CSharp/EasyMicroservices.Logger.sln
+        run: dotnet restore ./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln
       - name: Build
-        run: dotnet build ./src/CSharp/EasyMicroservices.Logger.sln --no-restore
+        run: dotnet build ./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln --no-restore
       - name: Test
         run:  |
-          dotnet test ./src/CSharp/EasyMicroservices.Logger.sln --no-build --verbosity normal -f net6.0
-          dotnet test ./src/CSharp/EasyMicroservices.Logger.sln --no-build --verbosity normal -f net7.0
+          dotnet test ./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln --no-build --verbosity normal -f net6.0
+          dotnet test ./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln --no-build --verbosity normal -f net7.0

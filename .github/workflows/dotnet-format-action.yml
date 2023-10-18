@@ -21,11 +21,11 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           action: "fix"
-          workspace: "./src/CSharp/EasyMicroservices.Logger.sln"
+          workspace: "./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln"
       - name: Test
         run:  |
-          dotnet test ./src/CSharp/EasyMicroservices.Logger.sln -f net6.0
-          dotnet test ./src/CSharp/EasyMicroservices.Logger.sln -f net7.0
+          dotnet test ./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln -f net6.0
+          dotnet test ./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln -f net7.0
       - name: Commit files
         if: steps.format.outputs.has-changes == 'true'
         uses: EndBug/add-and-commit@v4.1.0
