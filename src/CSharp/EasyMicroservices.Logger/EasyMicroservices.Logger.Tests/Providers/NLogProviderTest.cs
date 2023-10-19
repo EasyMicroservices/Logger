@@ -14,4 +14,10 @@ namespace EasyMicroservices.Logger.Tests.Providers
         {
         }
     }
+    public class NLogProviderAsyncTest : BaseProviderAsyncTest
+    {
+        public NLogProviderAsyncTest() : base(new NLogProvider(LogManager.GetCurrentClassLogger()))
+        {
+        }
+    }
 }
