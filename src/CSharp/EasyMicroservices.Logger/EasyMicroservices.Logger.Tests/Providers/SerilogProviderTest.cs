@@ -11,4 +11,13 @@ namespace EasyMicroservices.Logger.Tests.Providers
         {
         }
     }
+
+    public class SerilogProviderAsyncTest : BaseProviderAsyncTest
+    {
+        public SerilogProviderAsyncTest() : base(new SerilogProvider(new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File("serilog.txt")))
+        {
+        }
+    }
 }

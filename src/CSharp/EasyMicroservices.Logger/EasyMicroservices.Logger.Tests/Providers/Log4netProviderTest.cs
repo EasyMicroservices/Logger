@@ -14,4 +14,10 @@ namespace EasyMicroservices.Logger.Tests.Providers
         {
         }
     }
+    public class Log4netProviderAsyncTest : BaseProviderAsyncTest
+    {
+        public Log4netProviderAsyncTest() : base(new Log4netProvider(LogManager.GetLogger(typeof(BaseProviderTest))))
+        {
+        }
+    }
 }

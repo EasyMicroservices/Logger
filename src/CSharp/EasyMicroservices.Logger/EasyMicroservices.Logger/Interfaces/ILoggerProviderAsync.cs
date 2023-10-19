@@ -6,7 +6,7 @@ namespace EasyMicroservices.Logger.Interfaces
     /// <summary>
     /// General logger define here
     /// </summary>
-    public interface ILoggerProviderAsync
+    public interface ILoggerProviderAsync : ILoggerProvider
     {
         /// <summary>
         ///  Verbose level log
