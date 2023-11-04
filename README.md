@@ -11,10 +11,9 @@ Install packages:
 2. Use package:
 
    [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-Log4net-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.Log4net/)
-   
    [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-NLog-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.NLog/)
-   
    [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-Serilog-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.Serilog/)
+   [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-DependencyInjection-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.DependencyInjection/)
 
 Startup:
 
