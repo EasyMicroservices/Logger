@@ -15,6 +15,8 @@ Install packages:
    [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-NLog-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.NLog/)
    
    [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-Serilog-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.Serilog/)
+   
+   [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-DependencyInjection-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.DependencyInjection/)
 
 Startup:
 
