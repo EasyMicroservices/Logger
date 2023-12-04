@@ -8,31 +8,30 @@
     </When>
     <Otherwise>
       <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net6.0;net48;net7.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net48;net7.0</TargetFrameworks>
       </PropertyGroup>
     </Otherwise>
   </Choose>
-
+  
   <PropertyGroup>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <Authors>EasyMicroservices</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.0.2</Version>
+    <Version>0.0.0.3</Version>
     <Description>logger wrapper</Description>
     <Copyright>EasyMicroservices@gmail.com</Copyright>
-    <PackageTags>log,logger,logging,nlog</PackageTags>
+    <PackageTags>log,logger,logging</PackageTags>
     <PackageProjectUrl>https://github.com/EasyMicroservices/Logger</PackageProjectUrl>
     <LangVersion>latest</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>.\bin\$(Configuration)\$(TargetFramework)\EasyMicroservices.Logger.NLog.xml</DocumentationFile>
+    <DocumentationFile>.\bin\$(Configuration)\$(TargetFramework)\EasyMicroservices.Logger.DependencyInjection.xml</DocumentationFile>
   </PropertyGroup>
-
+  
   <ItemGroup>
-    <PackageReference Include="NLog" Version="5.2.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <ProjectReference Include="..\EasyMicroservices.Logger\EasyMicroservices.Logger.csproj" />
   </ItemGroup>
-
 </Project>
