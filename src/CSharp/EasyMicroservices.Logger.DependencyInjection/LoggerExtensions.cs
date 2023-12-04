@@ -1,4 +1,5 @@
-﻿using EasyMicroservices.Logger.Options;
+﻿using EasyMicroservices.Logger.Interfaces;
+using EasyMicroservices.Logger.Options;
 using System;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -29,7 +30,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             options.ThrowIfNull(nameof(options));
             options(new LoggerOption());
-            services.AddScoped(service => LoggerOptionBuilder.GetLogger());
+            services.AddScoped<ILoggerProvider>(service => LoggerOptionBuilder.GetLogger());
             return services;
         }
 
@@ -43,7 +44,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             options.ThrowIfNull(nameof(options));
             options(new LoggerOption());
-            services.AddTransient(service => LoggerOptionBuilder.GetLogger());
+            services.AddTransient<ILoggerProvider>(service => LoggerOptionBuilder.GetLogger());
             return services;
         }
 
@@ -57,7 +58,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             options.ThrowIfNull(nameof(options));
             options(new LoggerOption());
-            services.AddSingleton(service => LoggerOptionBuilder.GetLogger());
+            services.AddSingleton<ILoggerProvider>(service => LoggerOptionBuilder.GetLogger());
             return services;
         }
     }
