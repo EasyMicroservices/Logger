@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
     <Authors>EasyMicroservices</Authors>
     <IsPackable>true</IsPackable>
-    <Version>0.0.0.4</Version>
+    <Version>0.0.0.5</Version>
     <Description>Logger and Auditing system</Description>
     <Copyright>EasyMicroservice@gmail.com</Copyright>
     <PackageTags>logging,auditing</PackageTags>
