@@ -21,11 +21,11 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           action: "fix"
-          workspace: "./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln"
+          workspace: "./src/CSharp/EasyMicroservices.Logger.sln"
       - name: Test
-        run: dotnet test ./src/CSharp/EasyMicroservices.Logger/EasyMicroservices.Logger.sln
+        run: dotnet test ./src/CSharp/EasyMicroservices.Logger.sln
       - name:  Test to generate Code Coverage Report
-        working-directory: ./src/CSharp/EasyMicroservices.Logger
+        working-directory: ./src/CSharp
         run: |
           dotnet build ./EasyMicroservices.Logger.sln
           dotnet tool install --global coverlet.console
@@ -33,8 +33,8 @@ jobs:
       - name: OpenCover Badge Generator
         uses: danpetitt/open-cover-badge-generator-action@v1.0.9
         with:
-          path-to-opencover-xml: ./src/CSharp/EasyMicroservices.Logger/coverage.opencover.xml
-          path-to-badges: ./src/CSharp/EasyMicroservices.Logger
+          path-to-opencover-xml: ./src/CSharp/coverage.opencover.xml
+          path-to-badges: ./src/CSharp
           minimum-coverage: 50
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit files
