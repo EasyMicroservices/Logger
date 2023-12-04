@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
 		<PackageReference Include="EasyMicroservices.Tests" Version="0.0.0.9" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
-		<PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
 		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
 		<PackageReference Include="Xunit.Microsoft.DependencyInjection" Version="7.0.7" />
 		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">

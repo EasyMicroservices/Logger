@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
     <Authors>EasyMicroservices</Authors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IsPackable>true</IsPackable>
     <Version>0.0.0.3</Version>
     <Description>Logger and Auditing system</Description>
     <Copyright>EasyMicroservice@gmail.com</Copyright>
@@ -15,8 +15,8 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="EasyMicroservices.ServiceContracts" Version="0.0.0.16" />
-    <PackageReference Include="EasyMicroservices.Utilities" Version="0.0.0.12" />
+    <PackageReference Include="EasyMicroservices.ServiceContracts" Version="0.0.0.20" />
+    <PackageReference Include="EasyMicroservices.Utilities" Version="0.0.0.13" />
   </ItemGroup>
  
 </Project>
