@@ -16,7 +16,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="options"></param>
         /// <param name="loggerConfiguration"></param>
         /// <returns></returns>
-        public static LoggerOption UseLog4net(this LoggerOption options, LoggerConfiguration loggerConfiguration)
+        public static LoggerOption UseSerilog(this LoggerOption options, LoggerConfiguration loggerConfiguration)
         {
             options.ThrowIfNull(nameof(options));
             loggerConfiguration.ThrowIfNull(nameof(loggerConfiguration));
