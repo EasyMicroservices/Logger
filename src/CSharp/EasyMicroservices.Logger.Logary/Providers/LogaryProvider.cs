@@ -33,10 +33,13 @@ public class LogaryProvider : BaseProvider
         var extracted = Extract(args);
         AddNotExistItems(extracted);
         var message = MessageModule.Event(logLevel, $"{extracted.Messages.First()}");
+        _logger.logWithAck(true, logLevel, Microsoft.FSharp.Core.FuncConvert.FromFunc<LogLevel, Message>((x) => message));
         if (extracted.HasExceptions)
-            MessageModule.Event(logLevel, $"{extracted.Exceptions.First()}");
+        {
+            var errormessage = MessageModule.Event(logLevel, $"{extracted.Exceptions.First()}");
+            _logger.logWithAck(true, logLevel, Microsoft.FSharp.Core.FuncConvert.FromFunc<LogLevel, Message>((x) => errormessage));
+        }
 
-        _logger.logWithAck(true,logLevel, Microsoft.FSharp.Core.FuncConvert.FromFunc<LogLevel, Message>((x)=> message));
         return (MessageContract)true;
     }
 
