@@ -69,4 +69,4 @@ public class DIController : ControllerBase
 }
 ```
 
-[![Line Coverage Status](./src/CSharp/EasyMicroservices.Logger/coverage-badge-line.svg)](https://github.com/danpetitt/open-cover-badge-generator-action/)
+[![Line Coverage Status](./src/CSharp/coverage-badge-line.svg)](https://github.com/danpetitt/open-cover-badge-generator-action/)
