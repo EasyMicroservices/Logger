@@ -22,6 +22,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\EasyMicroservices.Logger. Log4net\EasyMicroservices.Logger.Log4net.csproj" />
 	  <ProjectReference Include="..\EasyMicroservices.Logger.DependencyInjection\EasyMicroservices.Logger.DependencyInjection.csproj" />
+	  <ProjectReference Include="..\EasyMicroservices.Logger.Logary\EasyMicroservices.Logger.Logary.csproj" />
 	  <ProjectReference Include="..\EasyMicroservices.Logger.NLog\EasyMicroservices.Logger.NLog.csproj" />
 	  <ProjectReference Include="..\EasyMicroservices.Logger.Serilog\EasyMicroservices.Logger.Serilog.csproj" />
 	  <ProjectReference Include="..\EasyMicroservices.Logger\EasyMicroservices.Logger.csproj" />
