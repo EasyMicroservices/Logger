@@ -8,13 +8,13 @@ namespace EasyMicroservices.Logger.Options
     /// </summary>
     public static class LoggerOptionBuilder
     {
-        private static Func<ILoggerProviderAsync> _loggerFunc;
+        private static Func<ILoggerAsyncProvider> _loggerFunc;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="func"></param>
-        public static void UseLogger(Func<ILoggerProviderAsync> func)
+        public static void UseLogger(Func<ILoggerAsyncProvider> func)
         {
             if (_loggerFunc != null)
                 throw new Exception("You set UseLogger once.");
@@ -26,7 +26,7 @@ namespace EasyMicroservices.Logger.Options
         /// </summary>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public static ILoggerProviderAsync GetLogger()
+        public static ILoggerAsyncProvider GetLogger()
         {
             if (_loggerFunc == null)
                 throw new Exception("You did not set UseLogger.");
