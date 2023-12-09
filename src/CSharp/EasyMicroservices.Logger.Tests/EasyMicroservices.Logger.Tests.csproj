@@ -25,6 +25,7 @@
 	  <ProjectReference Include="..\EasyMicroservices.Logger.Logary\EasyMicroservices.Logger.Logary.csproj" />
 	  <ProjectReference Include="..\EasyMicroservices.Logger.Loupe\EasyMicroservices.Logger.Loupe.csproj" />
 	  <ProjectReference Include="..\EasyMicroservices.Logger.NLog\EasyMicroservices.Logger.NLog.csproj" />
+	  <ProjectReference Include="..\EasyMicroservices.Logger.Sentry\EasyMicroservices.Logger.Sentry.csproj" />
 	  <ProjectReference Include="..\EasyMicroservices.Logger.Serilog\EasyMicroservices.Logger.Serilog.csproj" />
 	  <ProjectReference Include="..\EasyMicroservices.Logger\EasyMicroservices.Logger.csproj" />
 	</ItemGroup>

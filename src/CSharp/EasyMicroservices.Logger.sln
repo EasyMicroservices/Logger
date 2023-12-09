@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMicroservices.Logger.Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMicroservices.Logger.Loupe", "EasyMicroservices.Logger.Loupe\EasyMicroservices.Logger.Loupe.csproj", "{7E83A896-DC34-4FEF-9B50-9542D4D868F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMicroservices.Logger.Sentry", "EasyMicroservices.Logger.Sentry\EasyMicroservices.Logger.Sentry.csproj", "{71916D95-CCBA-4993-BBC2-633BF310C02F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{7E83A896-DC34-4FEF-9B50-9542D4D868F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E83A896-DC34-4FEF-9B50-9542D4D868F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E83A896-DC34-4FEF-9B50-9542D4D868F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71916D95-CCBA-4993-BBC2-633BF310C02F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71916D95-CCBA-4993-BBC2-633BF310C02F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71916D95-CCBA-4993-BBC2-633BF310C02F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71916D95-CCBA-4993-BBC2-633BF310C02F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{B06FB19E-791E-43E7-BE00-3EC01698A1AE} = {B41249C7-F55F-4890-A2A7-177DEA51114C}
 		{BD4A3C8A-EEFF-48CC-BE66-B7A0F47A5616} = {B41249C7-F55F-4890-A2A7-177DEA51114C}
 		{7E83A896-DC34-4FEF-9B50-9542D4D868F5} = {B41249C7-F55F-4890-A2A7-177DEA51114C}
+		{71916D95-CCBA-4993-BBC2-633BF310C02F} = {B41249C7-F55F-4890-A2A7-177DEA51114C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D85582B4-E6F8-41D7-9BEC-F4C8B64DDF1B}
