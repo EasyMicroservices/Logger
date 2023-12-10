@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Choose>
     <When Condition="$(SolutionFileName.Contains('Net7'))">
@@ -20,15 +20,15 @@
     <Version>0.0.0.6</Version>
     <Description>logger wrapper</Description>
     <Copyright>EasyMicroservices@gmail.com</Copyright>
-    <PackageTags>log,logger,logging,nlog</PackageTags>
+    <PackageTags>log,logger,logging,loupe</PackageTags>
     <PackageProjectUrl>https://github.com/EasyMicroservices/Logger</PackageProjectUrl>
     <LangVersion>latest</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>.\bin\$(Configuration)\$(TargetFramework)\EasyMicroservices.Logger.NLog.xml</DocumentationFile>
+    <DocumentationFile>.\bin\$(Configuration)\$(TargetFramework)\EasyMicroservices.Logger.Loupe.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NLog" Version="5.2.7" />
+    <PackageReference Include="Loupe.Agent.Core" Version="5.0.0.14" />
   </ItemGroup>
 
   <ItemGroup>

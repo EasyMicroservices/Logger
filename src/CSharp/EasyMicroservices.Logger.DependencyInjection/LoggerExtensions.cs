@@ -31,7 +31,7 @@ namespace Microsoft.Extensions.DependencyInjection
             options.ThrowIfNull(nameof(options));
             options(new LoggerOption());
             services.AddScoped<ILoggerProvider>(service => LoggerOptionBuilder.GetLogger());
-            services.AddScoped<ILoggerProviderAsync>(service => LoggerOptionBuilder.GetLogger());
+            services.AddScoped<ILoggerAsyncProvider>(service => LoggerOptionBuilder.GetLogger());
             return services;
         }
 
@@ -46,7 +46,7 @@ namespace Microsoft.Extensions.DependencyInjection
             options.ThrowIfNull(nameof(options));
             options(new LoggerOption());
             services.AddTransient<ILoggerProvider>(service => LoggerOptionBuilder.GetLogger());
-            services.AddTransient<ILoggerProviderAsync>(service => LoggerOptionBuilder.GetLogger());
+            services.AddTransient<ILoggerAsyncProvider>(service => LoggerOptionBuilder.GetLogger());
             return services;
         }
 
@@ -61,7 +61,7 @@ namespace Microsoft.Extensions.DependencyInjection
             options.ThrowIfNull(nameof(options));
             options(new LoggerOption());
             services.AddSingleton<ILoggerProvider>(service => LoggerOptionBuilder.GetLogger());
-            services.AddSingleton<ILoggerProviderAsync>(service => LoggerOptionBuilder.GetLogger());
+            services.AddSingleton<ILoggerAsyncProvider>(service => LoggerOptionBuilder.GetLogger());
             return services;
         }
     }

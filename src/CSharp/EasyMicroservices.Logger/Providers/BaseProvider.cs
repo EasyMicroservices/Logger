@@ -10,7 +10,7 @@ namespace EasyMicroservices.Logger.Providers
     /// <summary>
     /// 
     /// </summary>
-    public abstract class BaseProvider : ILoggerProviderAsync
+    public abstract class BaseProvider : ILoggerAsyncProvider
     {
         internal ExtractedLogInfo Extract(params object[] args)
         {

@@ -7,8 +7,8 @@ namespace EasyMicroservices.Logger.Tests
 {
     public abstract class BaseProviderAsyncTest
     {
-        ILoggerProviderAsync _logger;
-        public BaseProviderAsyncTest(ILoggerProviderAsync logger)
+        ILoggerAsyncProvider _logger;
+        public BaseProviderAsyncTest(ILoggerAsyncProvider logger)
         {
             _logger = logger;
         }

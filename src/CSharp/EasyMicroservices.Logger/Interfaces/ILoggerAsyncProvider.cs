@@ -1,4 +1,5 @@
 ﻿using EasyMicroservices.ServiceContracts;
+using System;
 using System.Threading.Tasks;
 
 namespace EasyMicroservices.Logger.Interfaces
@@ -6,7 +7,7 @@ namespace EasyMicroservices.Logger.Interfaces
     /// <summary>
     /// General logger define here
     /// </summary>
-    public interface ILoggerProviderAsync : ILoggerProvider
+    public interface ILoggerAsyncProvider : ILoggerProvider
     {
         /// <summary>
         ///  Verbose level log
