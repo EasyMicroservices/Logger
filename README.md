@@ -1,20 +1,25 @@
 # Logger
 Wrapper for any Logger package
 
+
+[![Line Coverage Status](./src/CSharp/coverage-badge-line.svg)](https://github.com/danpetitt/open-cover-badge-generator-action/)
+
+![Linux (dotnet build and test)](https://img.shields.io/github/actions/workflow/status/EasyMicroservices/Logger/dotnet-linux.yml?branch=develop)
+ 
+
 Install packages:
-
-1. Core package:
-
-    [![NuGet](https://img.shields.io/badge/EasyMicroservices-Logger-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.DependencyInjection/)
-
-
-2. Use package:
 
    [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-Log4net-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.Log4net/)
    
    [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-NLog-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.NLog/)
    
    [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-Serilog-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.Serilog/)
+
+   [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-Logary-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.Logary/)
+   
+   [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-Loupe-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.Loupe/)
+      
+   [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-Sentry-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.Sentry/)
    
    [![NuGet](https://img.shields.io/badge/EasyMicroservicesLogger-DependencyInjection-orange.svg)](https://www.nuget.org/packages/EasyMicroservices.Logger.DependencyInjection/)
 
@@ -35,8 +40,14 @@ public class Startup
             o.UseNLog(); 
             //or 
             o.UseLog4net(); 
-        }); 
-    }    
+            //or 
+            o.UseSentry(); 
+            //or 
+            o.UseLoupe(); 
+            //or 
+            o.UseLogary(); 
+        });
+    }
 }
 ```
 Usage:
@@ -68,5 +79,3 @@ public class DIController : ControllerBase
     }
 }
 ```
-
-[![Line Coverage Status](./src/CSharp/coverage-badge-line.svg)](https://github.com/danpetitt/open-cover-badge-generator-action/)
